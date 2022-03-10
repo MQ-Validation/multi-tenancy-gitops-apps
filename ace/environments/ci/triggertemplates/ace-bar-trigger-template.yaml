@@ -1,0 +1,22 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: ace-bar
+spec:
+  params:
+    - name: source-git-url
+    - name: source-repo-name
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        name: ace-bar-webhook-$(uid)
+      spec:
+        params:
+        pipelineRef:
+          name: ace-build-bar-promote-dev
+        serviceAccountName: pipeline
+        workspaces:
+          - name: shared-workspace
+            persistentVolumeClaim:
+              claimName: ace-bar-pvc
