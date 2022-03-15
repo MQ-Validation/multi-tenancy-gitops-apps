@@ -2,9 +2,9 @@ resources:
 #- certificates/ci-mq-client-certificate.yaml
 #- certificates/ci-mq-server-certificate.yaml
 - configmaps/gitops-repo-configmap.yaml
-#- eventlisteners/cntk-event-listener.yaml
-#- triggerbindings/cntk-binding.yaml
-#- triggertemplates/mq-infra-dev.yaml
+- eventlisteners/cntk-event-listener.yaml
+- triggerbindings/cntk-binding.yaml
+- triggertemplates/mq-infra-dev.yaml
 #- triggertemplates/mq-spring-app-dev.yaml
 - pipelines/ibm-test-pipeline-for-dev.yaml
 - pipelines/ibm-test-pipeline-for-stage.yaml
@@ -17,8 +17,8 @@ resources:
 - roles/custom-dev-pipeline-sa-rolebinding.yaml
 - roles/custom-staging-pipeline-sa-rolebinding.yaml
 - roles/custom-prod-pipeline-sa-rolebinding.yaml
-#- routes/cntk-route.yaml
-#- secrets/artifactory-access-secret.yaml
+- routes/cntk-route.yaml
+# - secrets/artifactory-access-secret.yaml
 - secrets/git-credentials-secret.yaml
 - secrets/ibm-entitled-registry-credentials-secret.yaml
 #- secrets/mq-client-jks-password-secret.yaml
